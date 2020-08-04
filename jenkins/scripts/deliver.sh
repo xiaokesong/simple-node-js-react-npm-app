@@ -11,6 +11,8 @@ set +x
 
 echo '拷贝文件'
 set -x
+rm -rf /home/workspace/simple-node-js-react-npm-app
+mkdir /home/workspace/simple-node-js-react-npm-app
 cp -r /var/jenkins_home/workspace/simple-node-js-react-npm-app/build /home/workspace/simple-node-js-react-npm-app
 set +x
 
