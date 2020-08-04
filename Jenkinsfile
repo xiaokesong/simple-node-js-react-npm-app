@@ -24,20 +24,20 @@ pipeline {
                 sh './jenkins/scripts/deliver.sh'
             }
         }
-        // stage ('FileOperations - Copying file') {
-        //     steps {
-        //         fileOperations([fileCopyOperation(
-        //             excludes: '',
-        //             flattenFiles: true,
-        //             includes: '/var/jenkins_home/workspace/simple-node-js-react-npm-app/build/**',
-        //             targetLocation: '/home/simple-node-js-react-npm-app'
-        //         )])
-        //     }
-        // }
-        stage ('Copying file') {
+        stage ('FileOperations - Copying file') {
             steps {
-                sh 'cp -Rp /var/jenkins_home/workspace/simple-node-js-react-npm-app/build /home/simple-node-js-react-npm-app'
+                fileOperations([fileCopyOperation(
+                    excludes: '',
+                    flattenFiles: true,
+                    includes: '/var/jenkins_home/workspace/simple-node-js-react-npm-app/build/**',
+                    targetLocation: '/home/simple-node-js-react-npm-app'
+                )])
             }
         }
+        // stage ('Copying file') {
+        //     steps {
+        //         sh 'cp -Rp /var/jenkins_home/workspace/simple-node-js-react-npm-app/build /home/simple-node-js-react-npm-app'
+        //     }
+        // }
     }
 }
