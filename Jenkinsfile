@@ -26,7 +26,10 @@ pipeline {
         }
         stage ('FileOperations - Copying file') {
             steps {
-                fileOperations([folderCopyOperation('/var/jenkins_home/workspace/simple-node-js-react-npm-app/build','/home/simple-node-js-react-npm-app')])
+                fileOperations([folderCopyOperation(
+                    sourceFolderPath: '/var/jenkins_home/workspace/simple-node-js-react-npm-app/build',
+                    destinationFolderPath: '/home/simple-node-js-react-npm-app'
+                )])
             }
         }
         // stage ('Copying file') {
