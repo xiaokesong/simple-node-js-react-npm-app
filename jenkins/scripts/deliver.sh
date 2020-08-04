@@ -11,7 +11,7 @@ set +x
 
 echo '拷贝文件'
 set -x
-cp -r /var/jenkins_home/workspace/simple-node-js-react-npm-app/build /home/simple-node-js-react-npm-app
+cp -r /var/jenkins_home/workspace/simple-node-js-react-npm-app/build /home/workspace/simple-node-js-react-npm-app
 set +x
 
 echo 'Now...'
