@@ -29,14 +29,14 @@ pipeline {
         //         fileOperations([fileCopyOperation(
         //             excludes: '',
         //             flattenFiles: true,
-        //             includes: '/jenkins_home/workspace/simple-node-js-react-npm-app/build/*.*',
+        //             includes: '/var/jenkins_home/workspace/simple-node-js-react-npm-app/build/**',
         //             targetLocation: '/home/simple-node-js-react-npm-app'
         //         )])
         //     }
         // }
         stage ('Copying file') {
             steps {
-                sh 'cp /jenkins_home/workspace/simple-node-js-react-npm-app/build /home/simple-node-js-react-npm-app'
+                sh 'cp /var/jenkins_home/workspace/simple-node-js-react-npm-app/build /home/simple-node-js-react-npm-app'
             }
         }
     }
