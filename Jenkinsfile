@@ -21,8 +21,8 @@ pipeline {
         }
         stage('Deliver') { 
             steps {
-                sh './jenkins/scripts/deliver.sh'
-                sh 'docker cp jenkins-tutorial:/var/jenkins_home/workspace/simple-node-js-react-npm-app/build /home/simple-node-js-react-npm-app'
+                sh './jenkins/scripts/deliver.sh'                
+                fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: '/var/jenkins_home/workspace/simple-node-js-react-npm-app/build/**', targetLocation: '/home/simple-node-js-react-npm-app')])
             }
         }
     }
