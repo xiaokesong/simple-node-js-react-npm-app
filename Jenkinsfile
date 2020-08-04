@@ -23,7 +23,6 @@ pipeline {
             steps {
                 sh './jenkins/scripts/deliver.sh' 
                 sh './jenkins/scripts/kill.sh' 
-                sh 'sudo cp -r /var/jenkins_home/workspace/simple-node-js-react-npm-app/build /home/simple-node-js-react-npm-app'
             }
         }
     }
