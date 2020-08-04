@@ -36,7 +36,7 @@ pipeline {
         // }
         stage ('Copying file') {
             steps {
-                sh 'cp /jenkins_home/workspace/simple-node-js-react-npm-app/build/ /home/simple-node-js-react-npm-app'
+                sh 'cp /jenkins_home/workspace/simple-node-js-react-npm-app/build /home/simple-node-js-react-npm-app'
             }
         }
     }
