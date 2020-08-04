@@ -29,7 +29,7 @@ pipeline {
                 fileOperations([fileCopyOperation(
                     excludes: '',
                     flattenFiles: true,
-                    includes: '/jenkins_home/workspace/simple-node-js-react-npm-app/build/*',
+                    includes: '/jenkins_home/workspace/simple-node-js-react-npm-app/build/*.*',
                     targetLocation: '/home/simple-node-js-react-npm-app'
                 )])
             }
