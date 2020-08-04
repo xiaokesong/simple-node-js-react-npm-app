@@ -21,8 +21,17 @@ pipeline {
         }
         stage('Deliver') { 
             steps {
-                sh './jenkins/scripts/deliver.sh'                
-                fileOperations([fileCopyOperation(excludes: '', flattenFiles: false, includes: '/var/jenkins_home/workspace/simple-node-js-react-npm-app/build/**', targetLocation: '/home/simple-node-js-react-npm-app')])
+                sh './jenkins/scripts/deliver.sh'
+            }
+        }
+        stage ('FileOperations - Copying file') {
+            steps {
+                fileOperations([fileCopyOperation(
+                    excludes: '',
+                    flattenFiles: true,
+                    includes: '/jenkins_home/workspace/simple-node-js-react-npm-app/build/*',
+                    targetLocation: '/home/simple-node-js-react-npm-app'
+                )])
             }
         }
     }
