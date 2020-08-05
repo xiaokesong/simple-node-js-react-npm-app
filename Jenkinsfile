@@ -40,7 +40,7 @@ pipeline {
                 script {
                     def remote = [:]
                     remote.name = 'localhost'
-                    remote.host = '172.16.76.12'
+                    remote.host = '192.168.124.19'
                     remote.user = 'administrator'
                     remote.password = 'Password01!'
                     remote.allowAnyHosts = true
