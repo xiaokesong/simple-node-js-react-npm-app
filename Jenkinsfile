@@ -44,15 +44,10 @@ pipeline {
                     remote.user = 'administrator'
                     remote.password = 'Password01!'
                     remote.allowAnyHosts = true
-                    
-                    sshPut remote: remote, from: 'index.html', into: '.'
+
+                    sshPut remote: remote, from: '/var/jenkins_home/workspace/simple-node-js-react-npm-app/build', into: '.'
                 }
             }
         }
-        // stage ('Copying file') {
-        //     steps {
-        //         sh 'cp -Rp /var/jenkins_home/workspace/simple-node-js-react-npm-app/build /home/simple-node-js-react-npm-app'
-        //     }
-        // }
     }
 }
