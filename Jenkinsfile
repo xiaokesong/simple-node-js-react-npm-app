@@ -45,7 +45,8 @@ pipeline {
                     remote.password = 'Password01!'
                     remote.allowAnyHosts = true
 
-                    sshPut remote: remote, from: '/var/jenkins_home/workspace/simple-node-js-react-npm-app/build', into: '.'
+                    sshRemove remote: remote, path: "./simple-node-js-react-npm-app"
+                    sshPut remote: remote, from: '/var/jenkins_home/workspace/simple-node-js-react-npm-app/build/', into: './simple-node-js-react-npm-app'
                 }
             }
         }
