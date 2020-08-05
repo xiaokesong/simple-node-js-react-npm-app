@@ -6,4 +6,3 @@ XCOPY simple-node-js-react-npm-app bak\%dt% /E /Y
 RD /S /Q simple-node-js-react-npm-app
 MKDIR simple-node-js-react-npm-app
 XCOPY simple-node-js-react-npm-app@tmp\build simple-node-js-react-npm-app /E /Y
-RD /S /Q simple-node-js-react-npm-app@tmp\build
