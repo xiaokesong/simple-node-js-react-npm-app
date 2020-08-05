@@ -48,7 +48,7 @@ pipeline {
                     sshCommand remote: remote, command: "MKDIR simple-node-js-react-npm-app@tmp"
                     sshPut remote: remote, from: '/var/jenkins_home/workspace/simple-node-js-react-npm-app/build', into: './simple-node-js-react-npm-app@tmp'
                     sshPut remote: remote, from: 'deploy.bat', into: './simple-node-js-react-npm-app@tmp'
-                    sshCommand remote: remote, command: "./simple-node-js-react-npm-app@tmp/deploy"
+                    sshCommand remote: remote, command: "simple-node-js-react-npm-app@tmp\deploy"
                     sshCommand remote: remote, command: "RD /S /Q simple-node-js-react-npm-app@tmp"
                 }
             }
