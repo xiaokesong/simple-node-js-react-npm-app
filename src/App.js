@@ -9,7 +9,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">
-            Good moming, Welcome to React, 肖克松您好 自动化学的挺快啊
+            Good moming, Welcome to React, 肖克松您好 自动化学的挺快啊, 这还可以
           </h1>
         </header>
         <p className="App-intro">
