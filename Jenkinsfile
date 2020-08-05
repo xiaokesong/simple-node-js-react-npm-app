@@ -43,10 +43,9 @@ pipeline {
                 remote.user = 'administrator'
                 remote.password = 'Password01!'
                 remote.allowAnyHosts = true
-                {
-                    writeFile file: 'index.html', text: 'ls -lrt'
-                    sshPut remote: remote, from: 'index.html', into: 'D:/test'
-                }
+
+                writeFile file: 'index.html', text: 'ls -lrt'
+                sshPut remote: remote, from: 'index.html', into: 'D:/test'
             }
         }
         // stage ('Copying file') {
