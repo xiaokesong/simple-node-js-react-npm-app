@@ -45,11 +45,11 @@ pipeline {
                     remote.password = 'Password01!'
                     remote.allowAnyHosts = true
 
-                    // sshRemove remote: remote, path: "./simple-node-js-react-npm-app@tmp/build"
+                    sshCommand remote: remote, command: "MKDIR simple-node-js-react-npm-app@tmp"
                     sshPut remote: remote, from: '/var/jenkins_home/workspace/simple-node-js-react-npm-app/build', into: './simple-node-js-react-npm-app@tmp'
-                    sshPut remote: remote, from: 'deploy.bat', into: '.'
-                    sshCommand remote: remote, command: "deploy"
-                    // sshCommand remote: remote, command: 'deploy(simple-node-js-react-npm-app).bat'
+                    sshPut remote: remote, from: 'deploy.bat', into: './simple-node-js-react-npm-app@tmp'
+                    sshCommand remote: remote, command: "./simple-node-js-react-npm-app@tmp/deploy"
+                    sshCommand remote: remote, command: "RD /S /Q simple-node-js-react-npm-app@tmp"
                 }
             }
         }
