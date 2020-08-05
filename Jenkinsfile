@@ -5,36 +5,36 @@ pipeline {
             args '-p 3000:3000'
         }
     }
-    environment { 
-        CI = 'true'
-    }
-    stages {
-        stage('Build') {
-            steps {
-                sh 'npm install'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh './jenkins/scripts/test.sh'
-            }
-        }
-        stage('Deliver') { 
-            steps {
-                sh './jenkins/scripts/deliver.sh'
-            }
-        }
-        stage ('FileOperations - Copying file') {
-            steps {
-                fileOperations([
-                    folderDeleteOperation(folderPath: '/home/simple-node-js-react-npm-app'),
-                    folderCopyOperation(
-                        sourceFolderPath: '/var/jenkins_home/workspace/simple-node-js-react-npm-app/build',
-                        destinationFolderPath: '/home/simple-node-js-react-npm-app'
-                    )
-                ])
-            }
-        }
+    // environment { 
+    //     CI = 'true'
+    // }
+    // stages {
+    //     stage('Build') {
+    //         steps {
+    //             sh 'npm install'
+    //         }
+    //     }
+    //     stage('Test') {
+    //         steps {
+    //             sh './jenkins/scripts/test.sh'
+    //         }
+    //     }
+    //     stage('Deliver') { 
+    //         steps {
+    //             sh './jenkins/scripts/deliver.sh'
+    //         }
+    //     }
+    //     stage ('FileOperations - Copying file') {
+    //         steps {
+    //             fileOperations([
+    //                 folderDeleteOperation(folderPath: '/home/simple-node-js-react-npm-app'),
+    //                 folderCopyOperation(
+    //                     sourceFolderPath: '/var/jenkins_home/workspace/simple-node-js-react-npm-app/build',
+    //                     destinationFolderPath: '/home/simple-node-js-react-npm-app'
+    //                 )
+    //             ])
+    //         }
+    //     }
         stage('Remote SSH') {
             steps {
                 script {
