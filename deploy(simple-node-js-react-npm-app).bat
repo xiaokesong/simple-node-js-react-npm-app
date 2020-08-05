@@ -1,11 +1,13 @@
-echo ´´½¨±¸·İÏîÄ¿ÎÄ¼ş¼Ğ
+@echo off
+chcp 65001
+echo åˆ›å»ºå¤‡ä»½é¡¹ç›®æ–‡ä»¶å¤¹
 set ymd=%date:~0,4%-%date:~5,2%-%date:~8,2%
 set hms=(%time:~0,2%%time:~3,2%%time:~6,2%%time:~9,2%)
 set dt=%ymd%%hms%
 mkdir bak\%dt%
-echo ±¸·İÏîÄ¿ÎÄ¼ş
+echo å¤‡ä»½é¡¹ç›®æ–‡ä»¶
 copy simple-node-js-react-npm-app bak\%dt%
-echo É¾³ıÏîÄ¿ÎÄ¼ş¼Ğ
+echo åˆ é™¤é¡¹ç›®æ–‡ä»¶å¤¹
 del /s /q simple-node-js-react-npm-app
-echo ¸²¸ÇĞÂµÄÏîÄ¿ÎÄ¼ş
+echo è¦†ç›–æ–°çš„é¡¹ç›®æ–‡ä»¶
 copy simple-node-js-react-npm-app@tmp simple-node-js-react-npm-app
