@@ -46,7 +46,7 @@ pipeline {
                     remote.allowAnyHosts = true
 
                     writeFile file: 'index.html', text: 'ls -lrt'
-                    sshPut remote: remote, from: 'index.html', into: 'D:/test'
+                    sshPut remote: remote, from: 'index.html', into: '.'
                 }
             }
         }
