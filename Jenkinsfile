@@ -27,7 +27,7 @@ pipeline {
         stage ('FileOperations - Copying file') {
             steps {
                 fileOperations([
-                    folderDeleteOperation(folderPath: '/home/simple-node-js-react-npm-app')
+                    folderDeleteOperation(folderPath: '/home/simple-node-js-react-npm-app'),
                     folderCopyOperation(
                         sourceFolderPath: '/var/jenkins_home/workspace/simple-node-js-react-npm-app/build',
                         destinationFolderPath: '/home/simple-node-js-react-npm-app'
