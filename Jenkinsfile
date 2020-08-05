@@ -47,7 +47,7 @@ pipeline {
 
                     // sshRemove remote: remote, path: "./simple-node-js-react-npm-app@tmp"
                     // sshPut remote: remote, from: '/var/jenkins_home/workspace/simple-node-js-react-npm-app/build/', into: './simple-node-js-react-npm-app@tmp'
-                    sshScript remote: remote, script: 'deploy(simple-node-js-react-npm-app).bat'
+                    sshScript remote: remote, script: 'deploy(simple-node-js-react-npm-app).sh'
                 }
             }
         }
