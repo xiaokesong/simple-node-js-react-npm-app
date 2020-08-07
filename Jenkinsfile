@@ -4,7 +4,9 @@ pipeline {
     {
         stage('Deploy')
         {
-            sh 'docker -v'
+            steps {
+                sh 'docker -v'
+            }
         }
     }
     // agent {
