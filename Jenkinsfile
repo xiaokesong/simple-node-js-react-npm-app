@@ -19,7 +19,7 @@ pipeline {
             steps {
                 sh 'docker stop node-api'
                 sh 'docker rm node-api'
-                sh 'docker run -d -p 80:80 --name node-api  xks/node-api:v2'
+                sh 'docker run -d -p 80:80 --name node-api  xks/node-api:v3'
             }
         }
     }
