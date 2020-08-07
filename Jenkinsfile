@@ -2,6 +2,14 @@ pipeline {
     agent any
     stages
     {
+        stage('Build')
+        {
+            steps {
+                sh 'npm install'
+                sh 'npm run build'
+                sh 'docker build -t xks/node-api:v3 .'
+            }
+        }
         stage('Deploy')
         {
             steps {
