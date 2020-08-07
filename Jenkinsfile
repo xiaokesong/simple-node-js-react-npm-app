@@ -4,6 +4,11 @@ pipeline {
             image 'node:6-alpine'
         }
     }
+
+environment {
+    VERSION_ID="${BUILD_ID}"
+}
+
     stages
     {
         stage('Build')
@@ -11,7 +16,7 @@ pipeline {
             steps {
                 sh 'npm install'
                 sh 'npm run build'
-                sh 'docker build -t xks/node-api:v3 .'
+                sh 'docker build -t xks/node-api:${VERSION_ID} .'
             }
         }
         stage('Deploy')
@@ -19,7 +24,7 @@ pipeline {
             steps {
                 sh 'docker stop node-api'
                 sh 'docker rm node-api'
-                sh 'docker run -d -p 80:80 --name node-api  xks/node-api:v3'
+                sh 'docker run -d -p 80:80 --name node-api  xks/node-api:${VERSION_ID}'
             }
         }
     }
