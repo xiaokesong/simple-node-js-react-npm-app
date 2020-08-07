@@ -5,7 +5,9 @@ pipeline {
         stage('Deploy')
         {
             steps {
-                sh 'docker -v'
+                sh 'docker stop node-api'
+                sh 'docker rm node-api'
+                sh 'docker run -d -p 80:80 --name node-api  xks/node-api:v2'
             }
         }
     }
