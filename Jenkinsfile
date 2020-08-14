@@ -5,9 +5,9 @@ pipeline {
         }
     }
 
-environment {
-    VERSION_ID="${BUILD_ID}"
-}
+    environment {
+        VERSION_ID="${BUILD_ID}"
+    }
 
     stages
     {
